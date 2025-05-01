@@ -1,0 +1,304 @@
+{
+  "packages": [
+    {
+      "id": 1,
+      "provider": "Telkomsel",
+      "name": "Telkomsel 5GB",
+      "price": 25000,
+      "quota": "5GB Kuota Utama",
+      "validity": "7 Hari",
+      "type": "Regular",
+      "description": "Kuota berlaku 24 jam di semua jaringan"
+    },
+    {
+      "id": 2,
+      "provider": "Telkomsel",
+      "name": "Telkomsel 10GB",
+      "price": 45000,
+      "quota": "7GB Utama + 3GB Malam",
+      "validity": "15 Hari",
+      "type": "Combo",
+      "description": "Kuota malam aktif pukul 00:00 - 06:00"
+    },
+    {
+      "id": 3,
+      "provider": "Telkomsel",
+      "name": "Telkomsel 20GB",
+      "price": 75000,
+      "quota": "15GB Utama + 5GB Video",
+      "validity": "30 Hari",
+      "type": "Combo",
+      "description": "Termasuk akses aplikasi video (MAXstream, YouTube)"
+    },
+    {
+      "id": 4,
+      "provider": "Telkomsel",
+      "name": "Telkomsel Unlimited 1 Hari",
+      "price": 10000,
+      "quota": "Unlimited",
+      "validity": "1 Hari",
+      "type": "Unlimited",
+      "description": "Kecepatan 512kbps setelah 1GB penggunaan"
+    },
+    {
+      "id": 5,
+      "provider": "Telkomsel",
+      "name": "Telkomsel Unlimited 30 Hari",
+      "price": 120000,
+      "quota": "Unlimited",
+      "validity": "30 Hari",
+      "type": "Unlimited",
+      "description": "FUP 15GB, setelah itu kecepatan dibatasi"
+    },
+    {
+      "id": 6,
+      "provider": "Indosat",
+      "name": "Indosat 5GB",
+      "price": 23000,
+      "quota": "5GB Kuota Utama",
+      "validity": "7 Hari",
+      "type": "Regular",
+      "description": "Kuota full 24 jam, bisa tethering"
+    },
+    {
+      "id": 7,
+      "provider": "Indosat",
+      "name": "Indosat 10GB",
+      "price": 43000,
+      "quota": "6GB Utama + 4GB Aplikasi",
+      "validity": "15 Hari",
+      "type": "Combo",
+      "description": "Termasuk aplikasi medsos (IG, WA, TikTok)"
+    },
+    {
+      "id": 8,
+      "provider": "Indosat",
+      "name": "Indosat 20GB",
+      "price": 72000,
+      "quota": "12GB Utama + 8GB Malam",
+      "validity": "30 Hari",
+      "type": "Combo",
+      "description": "Bonus kuota malam jam 01.00 - 06.00"
+    },
+    {
+      "id": 9,
+      "provider": "Indosat",
+      "name": "Indosat Unlimited 1 Hari",
+      "price": 9000,
+      "quota": "Unlimited",
+      "validity": "1 Hari",
+      "type": "Unlimited",
+      "description": "FUP 1GB, lalu kecepatan 512kbps"
+    },
+    {
+      "id": 10,
+      "provider": "Indosat",
+      "name": "Indosat Unlimited 30 Hari",
+      "price": 110000,
+      "quota": "Unlimited",
+      "validity": "30 Hari",
+      "type": "Unlimited",
+      "description": "FUP 12GB, kecepatan 1Mbps setelahnya"
+    },
+    {
+      "id": 11,
+      "provider": "XL",
+      "name": "XL 5GB",
+      "price": 24000,
+      "quota": "5GB Kuota Utama",
+      "validity": "7 Hari",
+      "type": "Regular",
+      "description": "Kuota full 24 jam"
+    },
+    {
+      "id": 12,
+      "provider": "XL",
+      "name": "XL 10GB",
+      "price": 46000,
+      "quota": "7GB Utama + 3GB Video",
+      "validity": "15 Hari",
+      "type": "Combo",
+      "description": "Termasuk akses aplikasi video"
+    },
+    {
+      "id": 13,
+      "provider": "XL",
+      "name": "XL 20GB",
+      "price": 73000,
+      "quota": "15GB Utama + 5GB Malam",
+      "validity": "30 Hari",
+      "type": "Combo",
+      "description": "Bonus kuota malam jam 00:00 - 06:00"
+    },
+    {
+      "id": 14,
+      "provider": "XL",
+      "name": "XL Unlimited 1 Hari",
+      "price": 10000,
+      "quota": "Unlimited",
+      "validity": "1 Hari",
+      "type": "Unlimited",
+      "description": "FUP 1GB, kecepatan 512kbps"
+    },
+    {
+      "id": 15,
+      "provider": "XL",
+      "name": "XL Unlimited 30 Hari",
+      "price": 115000,
+      "quota": "Unlimited",
+      "validity": "30 Hari",
+      "type": "Unlimited",
+      "description": "FUP 10GB, kecepatan 1Mbps"
+    },
+    {
+      "id": 16,
+      "provider": "Axis",
+      "name": "Axis 5GB",
+      "price": 21000,
+      "quota": "5GB Kuota Utama",
+      "validity": "7 Hari",
+      "type": "Regular",
+      "description": "Berlaku nasional 24 jam"
+    },
+    {
+      "id": 17,
+      "provider": "Axis",
+      "name": "Axis 10GB",
+      "price": 39000,
+      "quota": "6GB Utama + 4GB Aplikasi",
+      "validity": "15 Hari",
+      "type": "Combo",
+      "description": "Termasuk kuota aplikasi TikTok dan IG"
+    },
+    {
+      "id": 18,
+      "provider": "Axis",
+      "name": "Axis 20GB",
+      "price": 68000,
+      "quota": "12GB Utama + 8GB Malam",
+      "validity": "30 Hari",
+      "type": "Combo",
+      "description": "Kuota malam jam 01:00 - 06:00"
+    },
+    {
+      "id": 19,
+      "provider": "Axis",
+      "name": "Axis Unlimited 1 Hari",
+      "price": 9000,
+      "quota": "Unlimited",
+      "validity": "1 Hari",
+      "type": "Unlimited",
+      "description": "FUP 800MB, kecepatan 512kbps"
+    },
+    {
+      "id": 20,
+      "provider": "Axis",
+      "name": "Axis Unlimited 30 Hari",
+      "price": 105000,
+      "quota": "Unlimited",
+      "validity": "30 Hari",
+      "type": "Unlimited",
+      "description": "FUP 10GB, kecepatan dibatasi"
+    },
+    {
+      "id": 21,
+      "provider": "Smartfren",
+      "name": "Smartfren 5GB",
+      "price": 20000,
+      "quota": "5GB Kuota Utama",
+      "validity": "7 Hari",
+      "type": "Regular",
+      "description": "Berlaku nasional semua jaringan"
+    },
+    {
+      "id": 22,
+      "provider": "Smartfren",
+      "name": "Smartfren 10GB",
+      "price": 37000,
+      "quota": "7GB Utama + 3GB Sosial Media",
+      "validity": "15 Hari",
+      "type": "Combo",
+      "description": "Termasuk akses IG, FB, WA"
+    },
+    {
+      "id": 23,
+      "provider": "Smartfren",
+      "name": "Smartfren 20GB",
+      "price": 65000,
+      "quota": "13GB Utama + 7GB Video",
+      "validity": "30 Hari",
+      "type": "Combo",
+      "description": "Akses YouTube dan Netflix"
+    },
+    {
+      "id": 24,
+      "provider": "Smartfren",
+      "name": "Smartfren Unlimited 1 Hari",
+      "price": 8000,
+      "quota": "Unlimited",
+      "validity": "1 Hari",
+      "type": "Unlimited",
+      "description": "FUP 1GB, kecepatan turun setelahnya"
+    },
+    {
+      "id": 25,
+      "provider": "Smartfren",
+      "name": "Smartfren Unlimited 30 Hari",
+      "price": 100000,
+      "quota": "Unlimited",
+      "validity": "30 Hari",
+      "type": "Unlimited",
+      "description": "FUP 10GB, kecepatan 1Mbps"
+    },
+    {
+      "id": 26,
+      "provider": "Tri",
+      "name": "Tri 5GB",
+      "price": 19000,
+      "quota": "5GB Kuota Utama",
+      "validity": "7 Hari",
+      "type": "Regular",
+      "description": "Full 24 jam, bisa hotspot"
+    },
+    {
+      "id": 27,
+      "provider": "Tri",
+      "name": "Tri 10GB",
+      "price": 35000,
+      "quota": "6GB Utama + 4GB Game",
+      "validity": "15 Hari",
+      "type": "Combo",
+      "description": "Termasuk akses Mobile Legends dan Free Fire"
+    },
+    {
+      "id": 28,
+      "provider": "Tri",
+      "name": "Tri 20GB",
+      "price": 60000,
+      "quota": "15GB Utama + 5GB Malam",
+      "validity": "30 Hari",
+      "type": "Combo",
+      "description": "Kuota malam jam 01:00 - 06:00"
+    },
+    {
+      "id": 29,
+      "provider": "Tri",
+      "name": "Tri Unlimited 1 Hari",
+      "price": 8000,
+      "quota": "Unlimited",
+      "validity": "1 Hari",
+      "type": "Unlimited",
+      "description": "FUP 1GB, kecepatan 512kbps"
+    },
+    {
+      "id": 30,
+      "provider": "Tri",
+      "name": "Tri Unlimited 30 Hari",
+      "price": 95000,
+      "quota": "Unlimited",
+      "validity": "30 Hari",
+      "type": "Unlimited",
+      "description": "FUP 8GB, kecepatan 1Mbps"
+    }
+  ]
+}
