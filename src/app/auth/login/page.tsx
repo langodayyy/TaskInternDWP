@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-// import PassswordInput from "@/components/ui/passwordInput";
 import AuthLayout from "../../layouts/authLayout";
 import PasswordInput from "@/components/ui/passwordInput";
 
@@ -14,29 +12,41 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
+  
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3001/users");
-      const users = await res.json();
-
-      const found = users.find(
+      const res = await fetch(`http://localhost:3001/users?username=${username}&password=${password}`);
+      const data = await res.json();
+      console.log(data);
+      
+      const found = data.find(
         (u: any) => u.username === username && u.password === password
       );
-
-      if (found) {
+      console.log("Found user:", found);
+      
+        
+      if (found && found.role === "admin") {
         localStorage.setItem("user", JSON.stringify(found));
-        router.push("/dashboard");
-      } else {
+        router.push("/admin/customers");
+      } 
+      else if (found && found.role === "customer") {
+        console.log('tes')
+        localStorage.setItem("userId", found.id);
+        router.push("/transaksi");
+      }
+      else {
         setError("Username atau password salah.");
       }
+      // console.log("Router is", router);
     } catch (err) {
       console.error(err);
       setError("Gagal menghubungi server.");
     }
   };
 
+  
   return (
     <AuthLayout>
       <div className="bg-white p-6 rounded shadow-md w-full max-w-sm">
@@ -53,8 +63,13 @@ export default function LoginPage() {
           />
           {error && <p className="text-red-600 text-sm">{error}</p>}
           <Button type="submit">Login</Button>
+          
         </form>
       </div>
     </AuthLayout>
   );
 }
+function setMounted(arg0: boolean) {
+  throw new Error("Function not implemented.");
+}
+

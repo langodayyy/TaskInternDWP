@@ -1,28 +1,23 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import MainLayout from "../layouts/mainLayout";
+import PhoneInput from "@/components/ui/inputPhone";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
-  SheetClose,
+
   SheetContent,
-  SheetDescription,
   SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import MainLayout from "../layouts/mainLayout";
-
-import PhoneInput from "@/components/ui/inputPhone";
-
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { Main } from "next/document";
+
 
 export default function KatalogPaket() {
   interface Package {
@@ -32,8 +27,12 @@ export default function KatalogPaket() {
     validity: string;
     description: string;
     price: number;
-    provider: string; // tambahkan ini
+    provider: string; 
   }
+
+  const [form, setForm] = useState({
+    phone: "",
+  });
 
   const [packages, setPackages] = useState<Package[]>([]);
 
@@ -42,12 +41,47 @@ export default function KatalogPaket() {
       .then((res) => res.json())
       .then((data) => {
         setPackages(data);
-        setOpenIds(data.map((pkg: Package) => pkg.id)); // buka semua
+        setOpenIds(data.map((pkg: Package) => pkg.id)); 
       })
       .catch((err) => console.error("Gagal fetch:", err));
   }, []);
 
-  // Kelompokkan paket berdasarkan provider
+  
+
+  const [selectedPackageId, setSelectedPackageId] = useState<number | null>(null);
+
+  const handleSubmit = async () => {
+    const storedUserId = localStorage.getItem("userId");
+    if (!form.phone || !selectedPackageId || !storedUserId) {
+      alert("Pastikan nomor HP, userId, dan paket telah dipilih.");
+      return;
+    }
+  
+    try {
+      const res = await fetch("http://localhost:3001/transactions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userId: Number(storedUserId),
+          packageId: Number(selectedPackageId),
+          phone: form.phone,
+          date: new Date().toISOString(),
+        }),
+      });
+      if (res.ok) {
+        alert("Transaksi berhasil!");
+        setForm({ phone: "" });
+      } else {
+        alert("Gagal menyimpan transaksi");
+      }
+    } catch (error) {
+      console.error("Gagal transaksi:", error);
+      alert("Terjadi kesalahan saat transaksi.");
+    }
+  };
+  
+  
+
   const grouped = packages.reduce<Record<string, Package[]>>((acc, pkg) => {
     if (!acc[pkg.provider]) acc[pkg.provider] = [];
     acc[pkg.provider].push(pkg);
@@ -151,16 +185,16 @@ export default function KatalogPaket() {
                       </span>
                       <Sheet>
                         <SheetTrigger asChild>
-                          <Button>Beli</Button>
+                        <Button onClick={() => setSelectedPackageId(pkg.id)}>Beli</Button>
                         </SheetTrigger>
                         <SheetContent>
                           <SheetHeader>
                             <SheetTitle>Beli paket data</SheetTitle>
                           </SheetHeader>
                           <div className=" gap-4 flex flex-col px-4">
-                            <h1 className="text-neutral-900 text-xl font-semibold">
+                            <div className="text-neutral-900 text-xl font-semibold">
                               {pkg.provider}
-                            </h1>
+                            </div>
                             <div className="px-4 gap-4 flex flex-col">
                               <div className="flex items-center gap-2">
                                 🌐 {pkg.quota}
@@ -172,11 +206,16 @@ export default function KatalogPaket() {
                                 ℹ️ {pkg.description}
                               </div>
                             </div>
-                            <PhoneInput></PhoneInput>
-                            <Button>Beli</Button>
+
+                            <PhoneInput
+                              value={form.phone}
+                              onChange={(e) =>
+                                setForm({ ...form, phone: e.target.value })
+                              }
+                            ></PhoneInput>
+                            <Button onClick={handleSubmit}>Konfirmasi Beli</Button>
                           </div>
-                          <SheetFooter>
-                          </SheetFooter>
+                          <SheetFooter></SheetFooter>
                         </SheetContent>
                       </Sheet>
                     </div>
